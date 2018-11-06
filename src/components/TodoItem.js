@@ -14,6 +14,9 @@ class TodoItem extends Component {
         onToggle: makeDummyHandler('onToggle'),
         onRemove: makeDummyHandler('onRemove'),
     }
+    shouldComponentUpdate(nextProps, nextState) {
+        return this.props.checked !== nextProps.checked;
+    }
     render() {
         const { text, checked, id, onToggle, onRemove } = this.props;
         return (

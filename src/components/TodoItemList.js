@@ -8,6 +8,9 @@ class TodoItemList extends Component {
         onToggle: makeDummyHandler('onToggle'),
         onRemove: makeDummyHandler('onRemove')
     }
+    shouldComponentUpdate(nextProps, nextState) {
+        return this.props.todos !== nextProps.todos;
+    }
     render() {
         const { todos, onToggle, onRemove } = this.props;
         const todoitems = todos.map(({id, text, checked}) => (
