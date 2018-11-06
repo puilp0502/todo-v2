@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import TodoListTemplate from './components/TodoListTemplate';
 import Form from './components/Form';
+import PriorityPicker from './components/PriorityPicker';
 import TodoItemList from './components/TodoItemList';
 
 class App extends Component {
@@ -8,6 +9,7 @@ class App extends Component {
 
   state = {
     input: '',
+    urgency: 1,
     todos: [
       { id: 0, text: '리액트 소개', checked: false },
       { id: 1, text: '리액트 소개', checked: true },
@@ -19,7 +21,9 @@ class App extends Component {
       input: e.target.value
     });
   }
-
+  handleUrgencyChange = urgency => {
+    this.setState({ urgency });
+  }
   handleCreate = () => {
     const { input, todos } = this.state;
     this.setState({
@@ -57,13 +61,14 @@ class App extends Component {
     this.setState({todos: this.state.todos.filter(todo => todo.id !== id)})
   }
   render() {
-    const { input, todos } = this.state;
+    const { input, urgency, todos } = this.state;
     const {
       handleChange,
       handleCreate,
       handleKeyPress,
       handleToggle,
       handleRemove,
+      handleUrgencyChange,
     } = this;
 
     return (
@@ -73,8 +78,8 @@ class App extends Component {
             value={input}
             onKeyPress={handleKeyPress}
             onChange={handleChange}
-            onCreate={handleCreate}/>)}
-        >
+            onCreate={handleCreate}/>)} 
+          priorityPicker={(<PriorityPicker urgency={urgency} onUrgencyChange={handleUrgencyChange} />)}>
           <TodoItemList todos={todos} onToggle={handleToggle} onRemove={handleRemove}/>
         </TodoListTemplate>
       </div>
