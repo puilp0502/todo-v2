@@ -10,7 +10,7 @@ class PriorityPicker extends Component {
     render() {
         const { urgency, onUrgencyChange } = this.props;
         const urgency_list = [1, 2, 3].map(i => (
-            <div className={cx('urgency', {active: urgency === i})} data-urgency={i} onClick={()=>onUrgencyChange(i)} />
+            <div key={i} className={cx('urgency', {active: urgency === i})} data-urgency={i} onClick={()=>onUrgencyChange(i)} />
         ))
         return (
             <div className={cx('picker')}>
