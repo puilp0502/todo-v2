@@ -25,12 +25,13 @@ class App extends Component {
     this.setState({ urgency });
   }
   handleCreate = () => {
-    const { input, todos } = this.state;
+    const { input, todos, urgency } = this.state;
     this.setState({
       input: '',
       todos: todos.concat({
         id: this.id++,
         text: input,
+        urgency: urgency,
         checked: false
       })
     })
