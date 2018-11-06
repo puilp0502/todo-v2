@@ -1,0 +1,46 @@
+.picker {
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    height: 1.5rem;
+    color: #adb5bd;
+    letter-spacing: 1px;
+    font-size: 10px;
+    text-align: center;
+    line-height: 1.5rem;
+}
+
+.selection {
+    display: flex;
+    height: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.urgency {
+    transition: .1s;
+    height: 1.6rem;
+    width: 1.6rem;
+    margin: 0 1rem;
+    border-radius: .8rem;
+    cursor: pointer;
+}
+.urgency:hover {
+    border-radius: .6rem;
+}
+.urgency.active, .urgency:active {
+    border-radius: .6rem;
+    height: 2rem;
+    width: 2rem;
+}
+.urgency[data-urgency='1'] {
+    background-color: #94d82d;
+}
+.urgency[data-urgency='2'] {
+    background-color: #339af0;
+}
+.urgency[data-urgency='3'] {
+    background-color: #fa5252;
+}
