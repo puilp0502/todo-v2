@@ -2,13 +2,10 @@ import React, { Component } from 'react';
 import classNames from 'classnames/bind';
 import styles from './TodoItem.module.css';
 
+import { makeDummyHandler } from '../utils';
+
 const cx = classNames.bind(styles);
-const makeDummyHandler = (name) => {
-    const msg = name ? 
-        "Warning: Missing implementation of `" + name + "`." :
-        "Warning: Handler is not provided."
-    return ()=>console.warn(msg);
-}
+
 class TodoItem extends Component {
     static defaultProps = {
         text: '',
@@ -28,7 +25,7 @@ class TodoItem extends Component {
                     <div>{text}</div>
                 </div>
                 {
-                    checked && (<div className={cx('check-mark')}>/</div>)
+                    checked && (<div className={cx('check-mark')}>&#x2713;</div>)
                 }
             </div>
         )
