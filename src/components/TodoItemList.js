@@ -13,8 +13,8 @@ class TodoItemList extends Component {
     }
     render() {
         const { todos, onToggle, onRemove } = this.props;
-        const todoitems = todos.map(({id, text, checked}) => (
-            <TodoItem key={id} id={id} text={text} checked={checked}
+        const todoitems = todos.map(({id, text, checked, urgency}) => (
+            <TodoItem key={id} id={id} text={text} checked={checked} urgency={urgency}
                 onToggle={onToggle} onRemove={onRemove}/>))
         return (
             <div>

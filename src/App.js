@@ -9,11 +9,11 @@ class App extends Component {
 
   state = {
     input: '',
-    urgency: 1,
+    urgency: 2,
     todos: [
-      { id: 0, text: '리액트 소개', checked: false },
-      { id: 1, text: '리액트 소개', checked: true },
-      { id: 2, text: '리액트 소개', checked: false },
+      { id: 0, text: '리액트 소개', checked: false, urgency: 1 },
+      { id: 1, text: '리액트 소개', checked: true, urgency: 3 },
+      { id: 2, text: '리액트 소개', checked: false, urgency: 2 },
     ]
   }
   handleChange = (e) => {

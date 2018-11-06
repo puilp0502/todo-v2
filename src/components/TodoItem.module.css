@@ -31,6 +31,20 @@
     word-break: break-all;
 }
 
+.todo-urgency {
+    height: 0.6rem;
+    width: 0.6rem;
+    border-radius: 0.3rem;
+}
+.todo-urgency[data-urgency='1'] {
+    background-color: #94d82d;
+}
+.todo-urgency[data-urgency='2'] {
+    background-color: #339af0;
+}
+.todo-urgency[data-urgency='3'] {
+    background-color: #fa5252;
+}
 .checked {
     text-decoration: line-through;
     color: #adb5bd;
@@ -40,6 +54,7 @@
     font-size: 1.5rem;
     line-height: 1rem;
     margin-left: 1rem;
+    width: 1rem;
     color: #3bc9db;
     font-weight: 800;
 }

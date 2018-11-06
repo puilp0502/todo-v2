@@ -18,7 +18,7 @@ class TodoItem extends Component {
         return this.props.checked !== nextProps.checked;
     }
     render() {
-        const { text, checked, id, onToggle, onRemove } = this.props;
+        const { text, checked, urgency, id, onToggle, onRemove } = this.props;
         return (
             <div className={cx('todo-item')} onClick={()=>onToggle(id)}>
                 <div className={cx('remove')} onClick={(e)=>{e.stopPropagation(); onRemove(id)}}>
@@ -27,9 +27,9 @@ class TodoItem extends Component {
                 <div className={cx('todo-text', { checked })}>
                     <div>{text}</div>
                 </div>
-                {
-                    checked && (<div className={cx('check-mark')}>&#x2713;</div>)
-                }
+                <div className={cx('todo-urgency')} data-urgency={urgency} />
+                <div className={cx('check-mark')}>{ checked && '✓' }</div>
+
             </div>
         )
     }
