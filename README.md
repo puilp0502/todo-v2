@@ -1,3 +1,6 @@
+# todo-v2
+Yet another Todo App built with React: [view here](https://puilp0502.github.io/todo-v2).
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
